@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>My Work</title>
+<meta name="description" content="ניהול לקוחות ועבודות">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B2F55">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="My Work">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>
+:root{
+  --navy:#0B2F55;--navy2:#123F6F;--blue:#1476C6;--ice:#E8F3FB;--bg:#F2F6F9;--card:#fff;
+  --text:#14263A;--muted:#5E7184;--line:#DCE5EC;
+  --orange:#E8641B;--orange-soft:#FDEDE3;
+  --red:#C2332A;--red-soft:#FBE8E6;--green:#167A4F;--green-soft:#E2F4EB;--amber:#A86A00;--amber-soft:#FCF2DC;
+  --r:14px;--top:env(safe-area-inset-top,0px);--bot:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Hebrew","Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.4;-webkit-text-size-adjust:100%}
+body.lock{overflow:hidden}
+h1,h2,h3,p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+a{color:inherit;text-decoration:none}
+svg{display:block;flex:none}
+bdi{unicode-bidi:isolate}
+.num{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}.small{font-size:13.5px}.bold{font-weight:700}
+.grow{flex:1;min-width:0}.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}
+.clip{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrap{white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* app frame */
+.hdr{background:var(--navy);color:#fff;padding:calc(var(--top) + 10px) 14px 12px}
+.hdr .row img{width:36px;height:36px;border-radius:9px;object-fit:cover}
+.hdr h1{font-size:19px;font-weight:700}
+.iconbtn{width:44px;height:44px;display:grid;place-items:center;border-radius:12px}
+main{padding:12px 14px calc(var(--bot) + 92px) 40px;max-width:760px;margin:0 auto}
+.nav{position:fixed;inset:auto 0 0 0;z-index:20;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding-bottom:var(--bot)}
+.nav button{position:relative;height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11.5px;color:var(--muted)}
+.nav button.on{color:var(--blue);font-weight:700}
+.dot{position:absolute;top:5px;left:calc(50% - 20px);min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--red);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+.handle{position:fixed;left:0;top:44%;z-index:15;width:32px;padding:12px 0;background:var(--orange);color:#fff;border-radius:0 12px 12px 0;display:flex;flex-direction:column;align-items:center;gap:7px;box-shadow:0 3px 10px rgba(11,47,85,.25)}
+.handle span{writing-mode:vertical-rl;font-size:13px;font-weight:700;letter-spacing:.2px}
+.handle b{min-width:20px;height:20px;border-radius:10px;background:#fff;color:var(--orange);font-size:12px;display:grid;place-items:center}
+.fab{position:fixed;right:max(16px,calc(50vw - 364px));bottom:calc(var(--bot) + 72px);z-index:16;height:52px;padding:0 18px 0 20px;border-radius:26px;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;gap:6px;box-shadow:0 5px 16px rgba(20,118,198,.4)}
+
+/* blocks */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:13px}
+.list{display:grid;grid-template-columns:minmax(0,1fr);gap:9px}
+.sec{margin-top:20px}
+.sec>.row:first-child{margin-bottom:8px;min-height:32px}
+.sec h2{font-size:16.5px;font-weight:700}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.tile{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 10px;min-width:0}
+.tile b{display:block;font-size:19px;line-height:1.2}
+.tile span{font-size:12.5px;color:var(--muted)}
+.search{position:relative;margin-top:11px}
+.search svg{position:absolute;right:12px;top:12px;color:var(--muted)}
+.search input{width:100%;height:46px;border:0;border-radius:12px;padding:0 42px 0 12px;background:#fff;font-size:16px;outline:none}
+.chips{display:flex;gap:7px;margin-bottom:11px;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;height:36px;padding:0 13px;border-radius:18px;background:#fff;border:1px solid var(--line);font-size:14px;display:flex;align-items:center;color:var(--muted)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}
+.tag{display:inline-flex;align-items:center;height:24px;padding:0 9px;border-radius:12px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.t-red{background:var(--red-soft);color:var(--red)}.t-green{background:var(--green-soft);color:var(--green)}
+.t-amber{background:var(--amber-soft);color:var(--amber)}.t-blue{background:var(--ice);color:var(--blue)}.t-gray{background:#EDF1F4;color:var(--muted)}
+.item{display:flex;align-items:center;gap:10px;width:100%;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:11px 12px;min-height:60px}
+.item .ttl{font-weight:650}
+.datebox{width:46px;flex:none;text-align:center;background:var(--ice);border-radius:10px;padding:5px 0;color:var(--navy);font-size:12px;line-height:1.2}
+.datebox b{display:block;font-size:16px}
+.avatar{width:40px;height:40px;flex:none;border-radius:50%;background:var(--ice);color:var(--navy);font-weight:700;display:grid;place-items:center}
+.empty{text-align:center;color:var(--muted);padding:30px 16px;background:#fff;border:1px dashed var(--line);border-radius:var(--r)}
+.empty b{display:block;color:var(--text);margin-bottom:3px}
+.banner{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border-radius:12px;background:var(--amber-soft);color:#6F4700;font-size:14px;margin-bottom:11px}
+.linkbtn{color:var(--blue);font-weight:650;font-size:14.5px;min-height:32px;display:inline-flex;align-items:center;gap:3px}
+.btn{height:46px;padding:0 15px;border-radius:12px;font-weight:650;display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--ice);color:var(--navy);text-align:center}
+.btn.pri{background:var(--blue);color:#fff}.btn.ok{background:var(--green);color:#fff}.btn.bad{background:var(--red-soft);color:var(--red)}.btn.full{width:100%}
+.btn.sm{height:36px;font-size:14px;padding:0 11px;border-radius:10px}
+.btns{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.quick a,.quick .off{height:62px;border-radius:12px;background:var(--ice);color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:13px;font-weight:650}
+.quick .off{opacity:.4}
+.bal{display:flex;align-items:center;gap:10px;justify-content:space-between;padding:13px;border-radius:var(--r);margin-top:12px}
+.bal.red{background:var(--red-soft);color:var(--red)}.bal.green{background:var(--green-soft);color:var(--green)}
+.bal b{font-size:21px;display:block;line-height:1.15}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.kv dt{color:var(--muted)}.kv dd{margin:0;overflow-wrap:anywhere}
+dl{margin:0}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.photos button{aspect-ratio:1;border-radius:10px;overflow:hidden;background:#DDE6ED}
+.photos img{width:100%;height:100%;object-fit:cover;display:block}
+.photos .add{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:var(--ice);color:var(--blue);font-size:13px;font-weight:650}
+.check{width:28px;height:28px;flex:none;border-radius:50%;border:2px solid #AFC0CE;display:grid;place-items:center;color:#fff}
+.check.on{background:var(--green);border-color:var(--green)}
+.tick{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 4px 0 11px;min-height:50px}
+.tick>button:first-of-type{display:flex;align-items:center;gap:10px;flex:1;min-width:0;padding:8px 0 8px 0;min-height:48px}
+.tick.done .txt{text-decoration:line-through;color:var(--muted)}
+.mini{width:38px;height:44px;display:grid;place-items:center;color:var(--muted);flex:none}
+.addline{display:flex;gap:7px;margin-bottom:9px}
+.addline input,.addline textarea{flex:1;min-width:0}
+.addline .btn{width:48px;padding:0;flex:none}
+
+/* sheets */
+.sheet{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;animation:up .2s ease-out}
+.sheet.drawer{background:rgba(9,27,48,.45);animation:fade .15s}
+.sheet.drawer .panel{position:absolute;inset:0 auto 0 0;width:min(92vw,430px);background:var(--bg);display:flex;flex-direction:column;animation:fromleft .2s ease-out;box-shadow:6px 0 24px rgba(0,0,0,.2)}
+.sheet.dialog{background:rgba(9,27,48,.45);justify-content:flex-end;align-items:center;animation:fade .15s}
+.sheet.dialog .panel{width:100%;max-width:520px;background:#fff;border-radius:18px 18px 0 0;padding:18px 16px calc(var(--bot) + 16px)}
+.sheet.viewer{background:#000;color:#fff}
+.viewer img{flex:1;min-height:0;width:100%;object-fit:contain}
+@keyframes up{from{transform:translateY(24px);opacity:0}}
+@keyframes fade{from{opacity:0}}
+@keyframes fromleft{from{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.sheet,.sheet .panel{animation:none!important}}
+.bar{background:var(--navy);color:#fff;padding:calc(var(--top) + 4px) 6px 4px;display:flex;align-items:center;gap:2px;min-height:calc(var(--top) + 52px);flex:none}
+.bar h2{flex:1;min-width:0;font-size:17.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 4px}
+.body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px 14px calc(var(--bot) + 28px)}
+.body>*{max-width:680px;margin-inline:auto}
+.foot{flex:none;background:#fff;border-top:1px solid var(--line);padding:10px 14px calc(var(--bot) + 10px)}
+.foot>*{max-width:680px;margin-inline:auto}
+
+/* forms */
+label.f{display:block;margin-bottom:13px}
+label.f>span,.flabel{display:block;font-size:14px;font-weight:650;margin-bottom:5px;color:#35495D}
+.inp,.f input,.f select,.f textarea,.addline input{width:100%;height:46px;border:1px solid #C9D6E0;border-radius:11px;background:#fff;padding:0 12px;font-size:16px;outline:none;-webkit-appearance:none;appearance:none}
+.f input[type=date],.f input[type=time]{min-width:0;display:block}
+.f textarea{height:auto;min-height:84px;padding:10px 12px;resize:vertical;display:block}
+.f input:focus,.f select:focus,.f textarea:focus,.addline input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(20,118,198,.15)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px}
+.pills input{position:absolute;opacity:0;pointer-events:none}
+.pills span{display:flex;align-items:center;height:38px;padding:0 12px;border-radius:19px;background:#fff;border:1px solid #C9D6E0;font-size:14.5px}
+.pills input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:650}
+.pills input:focus-visible+span{outline:2px solid var(--blue);outline-offset:2px}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;background:#E2EAF0;border-radius:11px;padding:3px;margin-bottom:12px}
+.seg button{height:44px;border-radius:9px;text-align:center;font-size:14px;line-height:1.15;color:var(--muted)}
+.seg button.on{background:#fff;color:var(--navy);font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.toast{position:fixed;z-index:60;left:50%;transform:translateX(-50%);bottom:calc(var(--bot) + 76px);max-width:88vw;width:max-content;background:#10263D;color:#fff;padding:10px 15px;border-radius:11px;font-size:14.5px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* entrance */
+#splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:calc(var(--top) + 20px) 24px calc(var(--bot) + 20px);color:#fff;background:radial-gradient(120vw 90vh at 50% 38%,#1B4F86 0,#103763 50%,#0A2240 100%);transition:transform .6s cubic-bezier(.6,0,.8,.3),opacity .6s}
+.sp-in{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%}
+.sp-logo{width:min(52vw,210px);aspect-ratio:1;border-radius:50%;object-fit:cover;border:3px solid #D9B970;box-shadow:0 0 0 8px rgba(217,185,112,.1),0 14px 44px rgba(0,0,0,.35);animation:spIn .7s ease-out both;transition:transform .45s ease-out}
+.sp-name{margin-top:24px;font-size:23px;font-weight:700;animation:spIn .7s .12s ease-out both}
+.sp-line{width:54px;height:2px;margin:15px 0 38px;background:#D9B970;animation:spIn .7s .2s ease-out both}
+#enter{width:min(100%,310px);height:62px;border-radius:31px;text-align:center;font-size:19px;font-weight:800;letter-spacing:2.4px;color:#0A2747;background:linear-gradient(135deg,#F3DFA8,#CDA85F 55%,#EFD79C);box-shadow:0 8px 24px rgba(0,0,0,.3);animation:spIn .7s .3s ease-out both,spGlow 2.6s 1.1s ease-in-out infinite;transition:transform .12s}
+#enter:active{transform:scale(.97)}
+#splash.go .sp-logo{transform:scale(1.1)}
+#splash.go #enter{animation:none;background:#fff}
+#splash.out{transform:translateY(-100%);opacity:.5;pointer-events:none}
+@keyframes spIn{from{opacity:0;transform:translateY(14px)}}
+@keyframes spGlow{50%{box-shadow:0 8px 24px rgba(0,0,0,.3),0 0 0 9px rgba(217,185,112,.16)}}
+@media (prefers-reduced-motion:reduce){#splash *{animation:none!important}#splash.out{transform:none;opacity:0}}
+</style>
+</head>
+<body>
+<div id="splash"><div class="sp-in"><img class="sp-logo" src="logo.png" alt=""><p class="sp-name">ישראל מיזוג אוויר</p><div class="sp-line"></div><button id="enter" data-a="enter" lang="en" dir="ltr">TIME IS MONEY</button></div></div>
+<div id="app"></div>
+<div id="sheets"></div>
+<input id="filePhoto" type="file" accept="image/*" multiple hidden>
+<input id="fileBackup" type="file" hidden>
+<script>
+'use strict';
+const APP_VERSION='1.0.0', BIZ='ישראל מיזוג אוויר';
+const JOB_TYPES=['התקנה','תיקון','ניקוי ושירות','מילוי גז','החלפת חלק','פירוק','בדיקה','אחר'];
+const PAY_METHODS=['מזומן','ביט / פייבוקס','העברה בנקאית','צ׳ק','אשראי'];
+const GAS=['','R32','R410A','R22','R407C','R134a','אחר'];
+const DEFAULT_KIT=['סט מפתחות וכלי עבודה','מד לחצים (מניפולד)','מד מתח / רב-מודד','משאבת ואקום','מקדחה וביטים','סרט בידוד ואזיקונים'];
+
+/* ---------- helpers ---------- */
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const pad=n=>String(n).padStart(2,'0');
+const iso=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const parse=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+const today=()=>iso(new Date());
+const addDays=(s,n)=>{const d=parse(s);d.setDate(d.getDate()+n);return iso(d)};
+const addMonths=(s,n)=>{const d=parse(s),day=d.getDate();d.setDate(1);d.setMonth(d.getMonth()+n);const last=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();d.setDate(Math.min(day,last));return iso(d)};
+const diffDays=(a,b)=>Math.round((parse(a)-parse(b))/864e5);
+/* next working day: Saturday is skipped */
+const nextWork=()=>{const n=addDays(today(),1);return parse(n).getDay()===6?addDays(n,1):n};
+const DAYS=['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+const dayName=s=>'יום '+DAYS[parse(s).getDay()];
+const shortDate=s=>{const d=parse(s);return d.getDate()+'.'+(d.getMonth()+1)};
+const fullDate=s=>{if(!s)return'';const d=parse(s);return pad(d.getDate())+'.'+pad(d.getMonth()+1)+'.'+d.getFullYear()};
+const relDay=s=>{const n=diffDays(s,today());return n===0?'היום':n===1?'מחר':n===-1?'אתמול':dayName(s)+' '+shortDate(s)};
+const num=v=>{const n=parseFloat(String(v==null?'':v).replace(/[,\s₪]/g,''));return isFinite(n)?Math.round(n*100)/100:0};
+const money=n=>'<bdi class="num">₪'+(Math.round(n*100)/100).toLocaleString('en-US')+'</bdi>';
+const moneyT=n=>'₪'+(Math.round(n*100)/100).toLocaleString('en-US');
+const waNum=p=>{let d=String(p||'').replace(/\D/g,'');if(d.startsWith('00'))d=d.slice(2);if(d.startsWith('0'))d='972'+d.slice(1);return d.length>=11?d:''};
+const waUrl=(p,t)=>'https://wa.me/'+waNum(p)+'?text='+encodeURIComponent(t);
+const wazeUrl=a=>'https://waze.com/ul?q='+encodeURIComponent(a)+'&navigate=yes';
+
+const P={
+ search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',users:'<circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5M16 4.5a4 4 0 0 1 0 7M18 15c2.500.8 4 3 4 6"/>',
+ cal:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',cash:'<rect x="2" y="6" width="20" height="13" rx="2.500"/><circle cx="12" cy="12.500" r="3"/><path d="M6 10v5M18 10v5"/>',
+ snow:'<path d="M12 2v20M3.300 7l17.400 10M20.700 7 3.300 17M12 6 9.500 3.500M12 6l2.500-2.500M12 18l-2.500 2.500M12 18l2.500 2.500"/>',note:'<path d="M5 3h14a1 1 0 0 1 1 1v11l-6 6H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 21v-6h6M8 8h8M8 12h5"/>',
+ gear:'<circle cx="12" cy="12" r="3"/><path d="M19.400 15a1.700 1.700 0 0 0 .3 1.800l.1.100a2 2 0 1 1-2.800 2.800l-.1-.1a1.700 1.700 0 0 0-2.800 1.200V21a2 2 0 0 1-4 0v-.1a1.700 1.700 0 0 0-2.900-1.200l-.1.100a2 2 0 1 1-2.800-2.800l.1-.1a1.700 1.700 0 0 0-1.200-2.900H3a2 2 0 0 1 0-4h.1a1.700 1.700 0 0 0 1.200-2.900l-.1-.1a2 2 0 1 1 2.800-2.800l.1.100a1.700 1.700 0 0 0 1.900.3 1.700 1.700 0 0 0 1-1.500V3a2 2 0 0 1 4 0v.1a1.700 1.700 0 0 0 2.900 1.200l.1-.1a2 2 0 1 1 2.800 2.800l-.1.100a1.700 1.700 0 0 0 1.200 2.900h.1a2 2 0 0 1 0 4h-.1a1.700 1.700 0 0 0-1.500 1Z"/>',
+ plus:'<path d="M12 5v14M5 12h14"/>',back:'<path d="m9 5 7 7-7 7"/>',x:'<path d="M6 6l12 12M18 6 6 18"/>',edit:'<path d="M4 20h4L19 9a2.800 2.800 0 0 0-4-4L4 16v4Z"/>',trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/>',
+ phone:'<path d="M5 3h4l2 5-2.500 1.500a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/>',chat:'<path d="M12 3a9 9 0 0 0-7.700 13.600L3 21l4.500-1.200A9 9 0 1 0 12 3Z"/>',pin:'<path d="M12 22s7-6.500 7-12a7 7 0 1 0-14 0c0 5.500 7 12 7 12Z"/><circle cx="12" cy="10" r="2.500"/>',
+ cam:'<path d="M3 8a2 2 0 0 1 2-2h2.500L9 4h6l1.500 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8Z"/><circle cx="12" cy="13" r="3.500"/>',check:'<path d="m5 12.500 4.500 4.500L19 7.500"/>',star:'<path d="m12 3 2.800 5.800 6.200.9-4.500 4.400 1 6.300L12 17.400 6.500 20.400l1-6.300L3 9.700l6.200-.9L12 3Z"/>',
+ box:'<path d="M3 8l9-5 9 5v8l-9 5-9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/>',swap:'<path d="M7 4 3 8l4 4M3 8h14M17 12l4 4-4 4M21 16H7"/>',share:'<path d="M12 15V3M8 7l4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>'
+};
+const ic=(n,s=22,w=1.9,fill='none')=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="${fill}" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
+
+/* ---------- storage ---------- */
+const DB_NAME='israel-ac',LS_KEY='israel-ac-state';
+let db=null;
+const openDB=()=>new Promise((res,rej)=>{const r=indexedDB.open(DB_NAME,1);
+  r.onupgradeneeded=()=>{r.result.createObjectStore('kv');r.result.createObjectStore('photos')};
+  r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
+const tx=(store,mode,fn)=>new Promise((res,rej)=>{const t=db.transaction(store,mode),s=t.objectStore(store);let out;const q=fn(s);
+  if(q)q.onsuccess=()=>{out=q.result};t.oncomplete=()=>res(out);t.onerror=t.onabort=()=>rej(t.error)});
+const blank=()=>({v:1,clients:[],jobs:[],notes:[],materials:[],kit:DEFAULT_KIT.map(text=>({id:uid(),text})),kitDone:{},photos:[],lastBackup:null,sound:true});
+let S=blank(),saveTimer=null;
+function writeNow(){clearTimeout(saveTimer);saveTimer=null;const copy=JSON.stringify(S);
+  try{localStorage.setItem(LS_KEY,copy)}catch(e){}
+  if(db)return tx('kv','readwrite',s=>s.put(copy,'state')).catch(()=>toast('שגיאה בשמירה'))}
+function save(){clearTimeout(saveTimer);saveTimer=setTimeout(writeNow,120)}
+const flush=()=>{if(saveTimer)writeNow()};
+async function load(){
+  try{db=await openDB();const raw=await tx('kv','readonly',s=>s.get('state'));if(raw)return Object.assign(blank(),JSON.parse(raw))}catch(e){console.warn(e)}
+  try{const raw=localStorage.getItem(LS_KEY);if(raw)return Object.assign(blank(),JSON.parse(raw))}catch(e){}
+  return blank();
+}
+
+/* ---------- remote-control sounds (generated, no audio files) ---------- */
+const SOUNDS={tap:[[2800,0,.07]],ok:[[2800,0,.06],[2800,.1,.06]],low:[[1700,0,.13]],power:[[2200,0,.09],[2800,.12,.09],[3400,.24,.22]]};
+let actx=null;
+function play(kind){if(S.sound===false)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;actx=actx||new C();const c=actx,
+    run=()=>{const t0=c.currentTime+.005;SOUNDS[kind].forEach(([f,at,len])=>{const o=c.createOscillator(),g=c.createGain(),t=t0+at;o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.05,t+.004);g.gain.setValueAtTime(.05,t+len-.012);g.gain.linearRampToValueAtTime(0,t+len);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+len+.01)})};
+    if(c.state==='running')run();else c.resume().then(run).catch(()=>{})}catch(e){}}
+document.addEventListener('click',e=>{if(e.target.tagName==='INPUT')return;const el=e.target.closest('button,a,.pills label');if(!el||el.id==='enter')return;
+  play(el.matches('.btn.bad')?'low':el.matches('.btn.pri,.btn.ok')?'ok':'tap')},true);
+
+/* ---------- domain ---------- */
+const client=id=>S.clients.find(c=>c.id===id);
+const job=id=>S.jobs.find(j=>j.id===id);
+const paid=j=>(j.payments||[]).reduce((a,p)=>a+p.amount,0);
+const remaining=j=>j.price>0?Math.max(0,Math.round((j.price-paid(j))*100)/100):0;
+const debt=j=>j.status==='done'?remaining(j):0;
+const clientJobs=id=>S.jobs.filter(j=>j.clientId===id).sort((a,b)=>(b.date+(b.time||'')).localeCompare(a.date+(a.time||'')));
+const clientDebt=id=>S.jobs.reduce((a,j)=>a+(j.clientId===id?debt(j):0),0);
+const totalDebt=()=>S.jobs.reduce((a,j)=>a+debt(j),0);
+const scheduledOn=d=>S.jobs.filter(j=>j.status!=='done'&&j.date===d).sort((a,b)=>(a.time||'99').localeCompare(b.time||'99'));
+const openMaterials=d=>S.materials.filter(m=>m.date===d&&!m.done).length+S.kit.filter(k=>!(S.kitDone[d]||{})[k.id]).length;
+function rollover(){ /* yesterday's unchecked items move on by themselves; checked ones are cleared */
+  const t=today();let ch=false;
+  S.materials=S.materials.filter(m=>{if(m.date>=t)return true;ch=true;if(m.done)return false;m.date=t;m.carried=true;return true});
+  Object.keys(S.kitDone).forEach(k=>{if(k<t){delete S.kitDone[k];ch=true}});
+  if(ch)save();
+}
+function syncJobMaterials(j,lines){
+  const want=[...new Set(lines.map(s=>s.trim()).filter(Boolean))],day=j.date<today()?today():j.date;
+  S.materials=S.materials.filter(m=>m.jobId!==j.id||m.done||(j.status!=='done'&&want.includes(m.text)));
+  if(j.status==='done')return;
+  S.materials.forEach(m=>{if(m.jobId===j.id&&!m.done)m.date=day});
+  want.forEach(text=>{if(!S.materials.some(m=>m.jobId===j.id&&m.text===text))S.materials.push({id:uid(),text,date:day,done:false,jobId:j.id})});
+}
+function applyPayment(jobs,amount,method,date){
+  let left=amount;
+  [...jobs].sort((a,b)=>a.date.localeCompare(b.date)).forEach((j,i,arr)=>{
+    if(left<=0)return;const room=remaining(j),take=(i===arr.length-1&&!j.price)?left:Math.min(left,room);
+    if(take>0){(j.payments=j.payments||[]).push({id:uid(),amount:Math.round(take*100)/100,method,date});left=Math.round((left-take)*100)/100}
+  });
+}
+
+/* ---------- ui core ---------- */
+const ui={tab:'clients',q:'',filter:'all',matDay:'next',kitEdit:false,installHidden:false,photoTarget:null,backup:null};
+const sheets=[];
+let toastT;
+function toast(t){let el=$('.toast');if(!el){el=document.createElement('div');el.className='toast';el.setAttribute('role','status');document.body.append(el)}
+  el.textContent=t;clearTimeout(toastT);toastT=setTimeout(()=>el.remove(),2400)}
+function openSheet(fn,opt={}){const el=document.createElement('div');el.className='sheet '+(opt.cls||'');el.setAttribute('role','dialog');el.setAttribute('aria-modal','true');
+  const sh={fn,form:!!opt.form,el,onClose:opt.onClose};sheets.push(sh);el.innerHTML=fn();$('#sheets').append(el);document.body.classList.add('lock');hydrate(el);return sh}
+function closeSheet(){const sh=sheets.pop();if(!sh)return;sh.el.remove();if(sh.onClose)sh.onClose();if(!sheets.length)document.body.classList.remove('lock');refresh()}
+function refresh(){renderApp();
+  for(let i=sheets.length-1;i>=0;i--){const sh=sheets[i];if(sh.form)continue;const html=sh.fn();
+    if(html===null){sh.el.remove();sheets.splice(i,1);continue}
+    const b=$('.body',sh.el),top=b?b.scrollTop:0;sh.el.innerHTML=html;const n=$('.body',sh.el);if(n)n.scrollTop=top;hydrate(sh.el)}
+  if(!sheets.length)document.body.classList.remove('lock')}
+function commit(){save();refresh()}
+function ask(text,ok='אישור',danger=false){return new Promise(res=>{let v=false;window.__ans=x=>{v=x;closeSheet()};
+  openSheet(()=>`<div class="panel"><p class="bold" style="font-size:17px;margin-bottom:16px">${esc(text)}</p><div class="btns"><button class="btn" data-a="answer" data-v="0">ביטול</button><button class="btn ${danger?'bad':'pri'}" data-a="answer" data-v="1">${esc(ok)}</button></div></div>`,{cls:'dialog',form:true,onClose:()=>res(v)})})}
+const bar=(title,right='',icon='back')=>`<div class="bar"><button class="iconbtn" data-a="close" aria-label="חזרה">${ic(icon,24)}</button><h2>${esc(title)}</h2>${right}</div>`;
+const barBtn=(a,icon,label,data='')=>`<button class="iconbtn" data-a="${a}" ${data} aria-label="${label}">${ic(icon)}</button>`;
+const field=(label,inner)=>`<label class="f"><span>${label}</span>${inner}</label>`;
+const inp=(name,val='',attrs='')=>`<input name="${name}" value="${esc(val)}" ${attrs}>`;
+const pills=(name,opts,val)=>`<div class="pills">${opts.map(o=>`<label><input type="radio" name="${name}" value="${esc(o[0])}" ${o[0]===val?'checked':''}><span>${esc(o[1])}</span></label>`).join('')}</div>`;
+const formSheet=(id,title,body,data='',save='שמירה')=>`<form data-form="${id}" ${data} style="display:contents" autocomplete="off" novalidate>${bar(title,'','x')}<div class="body"><div>${body}</div></div><div class="foot"><div><button class="btn pri full">${save}</button></div></div></form>`;
+
+/* photos */
+const urls=new Map();
+async function photoURL(id){if(urls.has(id))return urls.get(id);const r=await tx('photos','readonly',s=>s.get(id));if(!r)return'';const u=URL.createObjectURL(new Blob([r.data],{type:r.type}));urls.set(id,u);return u}
+function hydrate(root){root.querySelectorAll('img[data-pid]').forEach(i=>photoURL(i.dataset.pid).then(u=>{if(u)i.src=u}).catch(()=>{}))}
+async function compress(file){const u=URL.createObjectURL(file);try{const im=new Image();im.src=u;await im.decode();
+  const k=Math.min(1,1600/Math.max(im.naturalWidth,im.naturalHeight)),c=document.createElement('canvas');c.width=Math.round(im.naturalWidth*k);c.height=Math.round(im.naturalHeight*k);
+  c.getContext('2d').drawImage(im,0,0,c.width,c.height);const b=await new Promise(r=>c.toBlob(r,'image/jpeg',.78));if(!b)throw 0;return b}finally{URL.revokeObjectURL(u)}}
+async function addPhotos(files){const t=ui.photoTarget;if(!t||!db)return toast('לא ניתן לשמור תמונות');let ok=0;toast('שומר תמונות…');
+  for(const f of files){try{const b=await compress(f),data=await b.arrayBuffer(),id=uid();await tx('photos','readwrite',s=>s.put({type:b.type,data},id));S.photos.push({id,clientId:t.clientId,jobId:t.jobId||null,at:Date.now()});ok++}catch(e){console.warn(e)}}
+  toast(ok===files.length?(ok===1?'התמונה נשמרה':ok+' תמונות נשמרו'):'חלק מהתמונות לא נשמרו');commit()}
+async function removePhotos(ids){for(const id of ids){await tx('photos','readwrite',s=>s.delete(id)).catch(()=>{});if(urls.has(id)){URL.revokeObjectURL(urls.get(id));urls.delete(id)}}S.photos=S.photos.filter(p=>!ids.includes(p.id))}
+const photoGrid=(list,target)=>`<div class="photos">${`<button class="add" data-a="addPhoto" data-client="${target.clientId}" data-job="${target.jobId||''}">${ic('cam',24)}הוספה</button>`}${list.slice().reverse().map(p=>`<button data-a="viewPhoto" data-id="${p.id}" aria-label="הצגת תמונה"><img data-pid="${p.id}" alt=""></button>`).join('')}</div>`;
+
+/* ---------- main views ---------- */
+function statusTag(j){const d=debt(j);if(j.status!=='done')return`<span class="tag t-blue">מתוכנן</span>`;if(d>0)return`<span class="tag t-red">חוב ${moneyT(d)}</span>`;if(!j.price)return`<span class="tag t-amber">בלי מחיר</span>`;return`<span class="tag t-green">שולם</span>`}
+function jobRow(j,showClient){const c=client(j.clientId),sub=showClient?(c?c.name:''):(j.desc||'');const d=parse(j.date);
+  return`<button class="item" data-a="openJob" data-id="${j.id}"><span class="datebox num"><b>${d.getDate()}.${d.getMonth()+1}</b>${j.time?esc(j.time):DAYS[d.getDay()].slice(0,3)}</span><span class="grow"><span class="ttl clip" style="display:block">${esc(showClient&&c?c.name:j.type)}</span><span class="small muted clip" style="display:block">${esc(showClient?j.type+(j.desc?' · '+j.desc:''):sub||(j.status==='done'?'בוצע':'מתוכנן'))}</span></span>${statusTag(j)}</button>`}
+function clientRows(){const q=ui.q.trim().toLowerCase();
+  let l=S.clients.filter(c=>{if(ui.filter==='debt'&&!clientDebt(c.id))return false;if(ui.filter==='clear'&&clientDebt(c.id))return false;if(!q)return true;
+    const hay=[c.name,c.phone,c.address,c.notes,...clientJobs(c.id).map(j=>j.type+' '+(j.desc||''))].join(' ').toLowerCase();return hay.includes(q)||(q.replace(/\D/g,'')&&String(c.phone||'').replace(/\D/g,'').includes(q.replace(/\D/g,'')))});
+  l.sort((a,b)=>a.name.localeCompare(b.name,'he'));
+  if(!l.length)return S.clients.length?`<div class="empty"><b>לא נמצאו לקוחות</b>נסה חיפוש אחר</div>`:`<div class="empty"><b>עוד אין לקוחות</b>לחץ על "לקוח חדש" כדי להתחיל</div>`;
+  return l.map(c=>{const d=clientDebt(c.id),last=clientJobs(c.id)[0];return`<button class="item" data-a="openClient" data-id="${c.id}"><span class="avatar">${esc(c.name.trim()[0]||'')}</span><span class="grow"><span class="ttl clip" style="display:block">${esc(c.name)}</span><span class="small muted clip" style="display:block">${esc(c.address||'אין כתובת')}</span>${last?`<span class="small muted clip" style="display:block">${esc(last.type)} · ${fullDate(last.date)}</span>`:''}</span>${d?`<span class="tag t-red">${moneyT(d)}</span>`:(last?`<span class="tag t-green">אין חוב</span>`:'')}</button>`}).join('')}
+function vClients(){
+  const standalone=navigator.standalone||matchMedia('(display-mode: standalone)').matches,ios=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  const install=ios&&!standalone&&!ui.installHidden?`<div class="banner"><span class="grow"><b>התקנה:</b> בספארי לחץ על כפתור השיתוף, ואז "הוספה למסך הבית". כדאי להתקין לפני שמזינים נתונים.</span><button data-a="hideInstall" aria-label="סגירה">${ic('x',18)}</button></div>`:'';
+  const age=S.lastBackup?diffDays(today(),S.lastBackup.slice(0,10)):null;
+  const backup=S.clients.length>=3&&(age===null||age>=14)?`<button class="banner" data-a="settings" style="width:100%"><span class="grow"><b>כדאי לגבות.</b> הנתונים שמורים רק בטלפון הזה. ${age===null?'עוד לא נעשה גיבוי.':`הגיבוי האחרון לפני ${age} ימים.`}</span></button>`:'';
+  const nw=nextWork();
+  return`${install}${backup}<div class="tiles"><button class="tile" data-a="nav" data-tab="cal"><b class="num">${scheduledOn(today()).length}</b><span>עבודות היום</span></button><button class="tile" data-a="nav" data-tab="cal"><b class="num">${scheduledOn(nw).length}</b><span>${diffDays(nw,today())===1?'עבודות מחר':'ב'+dayName(nw)}</span></button><button class="tile" data-a="nav" data-tab="debts"><b style="color:${totalDebt()?'var(--red)':'inherit'}">${money(totalDebt())}</b><span>חובות פתוחים</span></button></div>
+  <div class="chips">${[['all','כל הלקוחות'],['debt','עם חוב'],['clear','בלי חוב']].map(f=>`<button class="chip ${ui.filter===f[0]?'on':''}" data-a="filter" data-v="${f[0]}">${f[1]}</button>`).join('')}</div><div class="list" id="clist">${clientRows()}</div><button class="fab" data-a="newClient">${ic('plus',20,2.4)}לקוח חדש</button>`}
+function vCal(){const t=today(),sch=S.jobs.filter(j=>j.status!=='done').sort((a,b)=>(a.date+(a.time||'99')).localeCompare(b.date+(b.time||'99')));
+  const groups=[['באיחור',sch.filter(j=>j.date<t)],['היום · '+shortDate(t),sch.filter(j=>j.date===t)],['מחר · '+shortDate(addDays(t,1)),sch.filter(j=>j.date===addDays(t,1))],['בהמשך',sch.filter(j=>j.date>addDays(t,1))]];
+  const done=S.jobs.filter(j=>j.status==='done').sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
+  const body=groups.filter(g=>g[1].length).map(g=>`<div class="sec"><div class="row"><h2>${g[0]}</h2></div><div class="list">${g[1].map(j=>jobRow(j,true)).join('')}</div></div>`).join('');
+  return`${body||`<div class="empty"><b>אין עבודות מתוכננות</b>הוסף עבודה ליומן</div>`}${done.length?`<div class="sec"><div class="row"><h2>בוצעו לאחרונה</h2></div><div class="list">${done.map(j=>jobRow(j,true)).join('')}</div></div>`:''}<button class="fab" data-a="newJob">${ic('plus',20,2.4)}עבודה חדשה</button>`}
+function vDebts(){const ym=today().slice(0,7);let month=0;S.jobs.forEach(j=>(j.payments||[]).forEach(p=>{if(p.date.startsWith(ym))month+=p.amount}));
+  const rows=S.clients.map(c=>{const js=S.jobs.filter(j=>j.clientId===c.id&&debt(j)>0);return{c,js,sum:js.reduce((a,j)=>a+debt(j),0),old:js.map(j=>j.date).sort()[0]}}).filter(r=>r.sum>0).sort((a,b)=>a.old.localeCompare(b.old));
+  const noPrice=S.jobs.filter(j=>j.status==='done'&&!j.price);
+  return`<div class="tiles" style="grid-template-columns:1fr 1fr"><div class="tile"><b style="color:var(--red)">${money(totalDebt())}</b><span>חובות פתוחים</span></div><div class="tile"><b style="color:var(--green)">${money(month)}</b><span>נכנס החודש</span></div></div>
+  <div class="list">${rows.map(r=>{const age=diffDays(today(),r.old),ph=waNum(r.c.phone);return`<div class="card"><button class="row" style="width:100%" data-a="openClient" data-id="${r.c.id}"><span class="grow"><span class="bold clip" style="display:block">${esc(r.c.name)}</span><span class="small muted">${r.js.length===1?esc(r.js[0].type):r.js.length+' עבודות'} · ${age?`לפני ${age} ימים`:'היום'}</span></span><b style="color:var(--red);font-size:18px">${money(r.sum)}</b></button><div class="btns" style="margin-top:10px"><button class="btn sm ok" data-a="payClient" data-id="${r.c.id}">קבלת תשלום</button>${ph?`<a class="btn sm" target="_blank" rel="noopener" href="${esc(waUrl(r.c.phone,`שלום ${r.c.name}, כאן ${BIZ}. תזכורת לגבי יתרה לתשלום בסך ${moneyT(r.sum)}. תודה רבה!`))}">${ic('chat',17)}תזכורת</a>`:''}</div></div>`}).join('')||`<div class="empty"><b>אין חובות פתוחים</b>כל הלקוחות שילמו</div>`}</div>
+  ${noPrice.length?`<div class="sec"><div class="row"><h2>עבודות בלי מחיר</h2></div><div class="list">${noPrice.map(j=>jobRow(j,true)).join('')}</div></div>`:''}`}
+function vService(){const t=today(),l=S.clients.filter(c=>c.nextService).sort((a,b)=>a.nextService.localeCompare(b.nextService));
+  const war=[];S.clients.forEach(c=>(c.units||[]).forEach(u=>{if(u.warrantyUntil&&u.warrantyUntil>=t&&diffDays(u.warrantyUntil,t)<=60)war.push({c,u})}));war.sort((a,b)=>a.u.warrantyUntil.localeCompare(b.u.warrantyUntil));
+  const row=c=>{const n=diffDays(c.nextService,t),tag=n<0?`<span class="tag t-red">באיחור ${-n} ימים</span>`:n<=30?`<span class="tag t-amber">בעוד ${n} ימים</span>`:`<span class="tag t-gray">${fullDate(c.nextService)}</span>`,ph=waNum(c.phone);
+    return`<div class="card"><button class="row between" style="width:100%" data-a="openClient" data-id="${c.id}"><span class="grow"><span class="bold clip" style="display:block">${esc(c.name)}</span><span class="small muted clip" style="display:block">${esc(c.address||'')}</span></span>${tag}</button>${n<=30?`<div class="btns" style="margin-top:10px"><button class="btn sm" data-a="svcDone" data-id="${c.id}">${ic('check',17)}בוצע</button>${ph?`<a class="btn sm" target="_blank" rel="noopener" href="${esc(waUrl(c.phone,`שלום ${c.name}, כאן ${BIZ}. הגיע הזמן לניקוי ושירות למזגן. מתי נוח לך שנקבע?`))}">${ic('chat',17)}הודעה</a>`:''}</div>`:''}</div>`};
+  return`<p class="small muted" style="margin-bottom:10px">ניקוי ושירות תקופתי לכל לקוח. כל לקוח שמתקרב אליו המועד הוא עבודה חוזרת.</p><div class="list">${l.map(row).join('')||`<div class="empty"><b>אין מועדי שירות</b>פתח לקוח וקבע לו "שירות הבא"</div>`}</div>
+  ${war.length?`<div class="sec"><div class="row"><h2>אחריות שמסתיימת בקרוב</h2></div><div class="list">${war.map(w=>`<button class="item" data-a="openClient" data-id="${w.c.id}"><span class="grow"><span class="ttl clip" style="display:block">${esc(w.c.name)}</span><span class="small muted clip" style="display:block">${esc([w.u.room,w.u.brand,w.u.model].filter(Boolean).join(' · '))}</span></span><span class="tag t-amber">${fullDate(w.u.warrantyUntil)}</span></button>`).join('')}</div></div>`:''}`}
+function vNotes(){const l=[...S.notes].sort((a,b)=>(a.done-b.done)||(b.pin-a.pin)||(b.at-a.at));
+  return`<form class="addline" data-form="note" autocomplete="off"><input name="text" placeholder="לרשום משהו חשוב לעבודה…" aria-label="פתק חדש" enterkeyhint="done"><button class="btn pri" aria-label="הוספה">${ic('plus',22,2.4)}</button></form>
+  <div class="list">${l.map(n=>`<div class="tick ${n.done?'done':''}"><button data-a="noteToggle" data-id="${n.id}" aria-label="סימון"><span class="check ${n.done?'on':''}">${n.done?ic('check',17,3):''}</span><span class="txt grow wrap">${esc(n.text)}</span></button><button class="mini" style="${n.pin?'color:var(--orange)':''}" data-a="notePin" data-id="${n.id}" aria-label="הצמדה">${ic('star',20,1.9,n.pin?'currentColor':'none')}</button><button class="mini" data-a="noteDel" data-id="${n.id}" aria-label="מחיקה">${ic('trash',19)}</button></div>`).join('')||`<div class="empty"><b>אין פתקים</b>ספקים, קודים, דברים לזכור</div>`}</div>`}
+const TABS=[['clients','לקוחות','users',vClients],['cal','יומן','cal',vCal],['debts','חובות','cash',vDebts],['service','שירות','snow',vService],['notes','פתקים','note',vNotes]];
+function renderApp(){rollover();const tab=TABS.find(t=>t[0]===ui.tab),q=$('#q'),hadFocus=q&&document.activeElement===q,nw=nextWork(),cnt=openMaterials(nw),dn=S.clients.filter(c=>clientDebt(c.id)).length,y=scrollY;
+  $('#app').innerHTML=`<header class="hdr"><div class="row"><img src="logo.png" alt=""><h1 class="grow">${ui.tab==='clients'?BIZ:tab[1]}</h1><button class="iconbtn" data-a="settings" aria-label="הגדרות וגיבוי">${ic('gear')}</button></div>${ui.tab==='clients'?`<div class="search">${ic('search',22)}<input id="q" type="search" placeholder="חיפוש לקוח, טלפון או כתובת" aria-label="חיפוש לקוח" value="${esc(ui.q)}" autocomplete="off"></div>`:''}</header><main>${tab[3]()}</main>
+  <button class="handle" data-a="openMat" aria-label="ציוד ליום עבודה">${ic('box',18)}<span>ציוד ליום עבודה</span>${cnt?`<b class="num">${cnt}</b>`:''}</button>
+  <nav class="nav">${TABS.map(t=>`<button class="${t[0]===ui.tab?'on':''}" data-a="nav" data-tab="${t[0]}" ${t[0]===ui.tab?'aria-current="page"':''}>${ic(t[2],23)}${t[1]}${t[0]==='debts'&&dn?`<i class="dot" style="font-style:normal">${dn}</i>`:''}</button>`).join('')}</nav>`;
+  scrollTo(0,y);if(hadFocus){const n=$('#q');n.focus();n.setSelectionRange(n.value.length,n.value.length)}}
+
+/* ---------- client / job sheets ---------- */
+function clientSheet(id){return()=>{const c=client(id);if(!c)return null;const jobs=clientJobs(id),d=clientDebt(id),ph=c.phone?esc(c.phone):'',wa=waNum(c.phone),pics=S.photos.filter(p=>p.clientId===id),sv=c.nextService;
+  return bar(c.name,barBtn('editClient','edit','עריכת לקוח',`data-id="${id}"`))+`<div class="body"><div>
+  <div class="row small muted" style="font-size:15px">${ic('pin',18)}<span class="grow">${esc(c.address||'לא הוזנה כתובת')}</span></div>
+  <div class="quick">${ph?`<a href="tel:${ph}">${ic('phone')}חיוג</a>`:`<span class="off">${ic('phone')}חיוג</span>`}${wa?`<a target="_blank" rel="noopener" href="https://wa.me/${wa}">${ic('chat')}וואטסאפ</a>`:`<span class="off">${ic('chat')}וואטסאפ</span>`}${c.address?`<a target="_blank" rel="noopener" href="${esc(wazeUrl(c.address))}">${ic('pin')}ניווט</a>`:`<span class="off">${ic('pin')}ניווט</span>`}</div>
+  ${d?`<div class="bal red"><span><span class="small">נשאר חוב</span><b>${money(d)}</b></span><button class="btn sm ok" data-a="payClient" data-id="${id}">קבלת תשלום</button></div>`:`<div class="bal green">${ic('check',22,2.6)}<span class="grow bold">אין חוב פתוח</span></div>`}
+  <div class="sec"><div class="row between"><h2>עבודות</h2><button class="linkbtn" data-a="newJob" data-client="${id}">${ic('plus',17,2.4)}הוספה</button></div><div class="list">${jobs.map(j=>jobRow(j,false)).join('')||`<div class="empty">עוד אין עבודות ללקוח הזה</div>`}</div></div>
+  <div class="sec"><div class="row between"><h2>הערות</h2><button class="linkbtn" data-a="editClient" data-id="${id}">עריכה</button></div><div class="card wrap ${c.notes?'':'muted'}">${esc(c.notes||'אין הערות')}</div></div>
+  <div class="sec"><div class="row between"><h2>תמונות</h2></div>${photoGrid(pics,{clientId:id})}</div>
+  <div class="sec"><div class="row between"><h2>מזגנים אצל הלקוח</h2><button class="linkbtn" data-a="editUnit" data-client="${id}">${ic('plus',17,2.4)}הוספה</button></div><div class="list">${(c.units||[]).map(u=>`<button class="item" data-a="editUnit" data-client="${id}" data-id="${u.id}"><span class="avatar">${ic('snow',20)}</span><span class="grow"><span class="ttl clip" style="display:block">${esc(u.room||u.brand||'מזגן')}</span><span class="small muted clip" style="display:block">${esc([u.brand,u.model,u.hp&&u.hp+' כ״ס',u.gas].filter(Boolean).join(' · '))}</span></span>${u.warrantyUntil?(u.warrantyUntil>=today()?`<span class="tag t-green">באחריות</span>`:`<span class="tag t-gray">אחריות הסתיימה</span>`):''}</button>`).join('')||`<div class="empty">דגם, גז ואחריות של כל מזגן</div>`}</div></div>
+  <div class="sec"><div class="row between"><h2>שירות הבא</h2><button class="linkbtn" data-a="editService" data-id="${id}">${sv?'שינוי':'קביעה'}</button></div><div class="card ${sv?'':'muted'}">${sv?`${dayName(sv)}, ${fullDate(sv)}`:'לא נקבע מועד'}</div></div>
+  <button class="btn bad full" style="margin-top:26px" data-a="delClient" data-id="${id}">${ic('trash',18)}מחיקת לקוח</button></div></div>`}}
+function jobSheet(id){return()=>{const j=job(id);if(!j)return null;const c=client(j.clientId),rem=remaining(j),d=debt(j),pics=S.photos.filter(p=>p.jobId===id),mats=S.materials.filter(m=>m.jobId===id);
+  return bar(j.type+(c?' · '+c.name:''),barBtn('editJob','edit','עריכת עבודה',`data-id="${id}"`))+`<div class="body"><div>
+  <div class="card"><dl class="kv"><dt>לקוח</dt><dd><button class="linkbtn" style="min-height:0;font-size:15px" data-a="openClient" data-id="${j.clientId}">${esc(c?c.name:'')}</button></dd><dt>כתובת</dt><dd>${esc(c&&c.address||'—')}</dd><dt>תאריך</dt><dd>${relDay(j.date)} · ${fullDate(j.date)}${j.time?' · '+esc(j.time):''}</dd><dt>סטטוס</dt><dd>${j.status==='done'?'בוצע':'מתוכנן'}</dd></dl>${j.desc?`<p class="wrap" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--line)">${esc(j.desc)}</p>`:''}</div>
+  ${j.status!=='done'?`<button class="btn ok full" style="margin-top:10px" data-a="jobDone" data-id="${id}">${ic('check',19,2.6)}סימון כבוצע</button>`:''}
+  <div class="sec"><div class="row"><h2>תשלום</h2></div><div class="card"><dl class="kv"><dt>מחיר</dt><dd>${j.price?money(j.price):'לא הוזן'}</dd><dt>שולם</dt><dd>${money(paid(j))}</dd><dt>${j.status==='done'?'נשאר חוב':'יתרה'}</dt><dd class="bold" style="color:${d?'var(--red)':rem?'inherit':'var(--green)'}">${j.price?money(rem):'—'}</dd></dl>
+  ${(j.payments||[]).length?`<div style="margin-top:9px;border-top:1px solid var(--line);padding-top:4px">${j.payments.map(p=>`<div class="row"><span class="grow small">${fullDate(p.date)} · ${esc(p.method)}</span><b class="small">${money(p.amount)}</b><button class="mini" data-a="delPay" data-job="${id}" data-id="${p.id}" aria-label="מחיקת תשלום">${ic('x',17)}</button></div>`).join('')}</div>`:''}
+  ${rem||!j.price?`<div class="btns" style="margin-top:11px">${rem?`<button class="btn sm ok" data-a="payFull" data-id="${id}">שולם הכול</button>`:''}<button class="btn sm" data-a="pay" data-id="${id}">תשלום חלקי</button></div>`:''}</div></div>
+  ${mats.length?`<div class="sec"><div class="row"><h2>חומרים לעבודה</h2></div><div class="list">${mats.map(matRow).join('')}</div></div>`:''}
+  ${j.notes?`<div class="sec"><div class="row"><h2>הערות</h2></div><div class="card wrap">${esc(j.notes)}</div></div>`:''}
+  <div class="sec"><div class="row"><h2>תמונות</h2></div>${photoGrid(pics,{clientId:j.clientId,jobId:id})}</div>
+  <button class="btn bad full" style="margin-top:26px" data-a="delJob" data-id="${id}">${ic('trash',18)}מחיקת עבודה</button></div></div>`}}
+function clientForm(id){const c=id?client(id):{};return()=>formSheet('client',id?'עריכת לקוח':'לקוח חדש',
+  field('שם לקוח',inp('name',c.name,'required enterkeyhint="next"'))+field('טלפון',inp('phone',c.phone,'type="tel" inputmode="tel" dir="ltr" style="text-align:right"'))+field('כתובת מגורים',inp('address',c.address,'placeholder="רחוב, מספר, עיר"'))+field('הערות',`<textarea name="notes" placeholder="קומה, קוד כניסה, שעות נוחות…">${esc(c.notes)}</textarea>`),`data-id="${id||''}"`)}
+function jobForm(o){const j=o.id?job(o.id):{type:o.type||'תיקון',status:o.status||(o.clientId?'done':'scheduled'),date:o.clientId?today():nextWork()},cid=j.clientId||o.clientId,c=cid&&client(cid),lines=o.id?S.materials.filter(m=>m.jobId===o.id).map(m=>m.text).join('\n'):'';
+  return()=>formSheet('job',o.id?'עריכת עבודה':'עבודה חדשה',
+  (c?`<input type="hidden" name="clientId" value="${cid}"><p class="bold" style="margin-bottom:12px">${esc(c.name)}</p>`:field('שם לקוח',`<input name="clientName" list="cl" placeholder="בחר או כתוב לקוח חדש"><datalist id="cl">${S.clients.map(x=>`<option value="${esc(x.name)}">`).join('')}</datalist>`))+
+  `<span class="flabel">סוג העבודה</span>${pills('type',JOB_TYPES.map(t=>[t,t]),j.type)}<span class="flabel">סטטוס</span>${pills('status',[['scheduled','מתוכנן'],['done','בוצע']],j.status)}`+
+  `<div class="two">${field('תאריך',inp('date',j.date,'type="date" required'))}${field('שעה',inp('time',j.time,'type="time"'))}</div>`+field('מה נעשה / מה צריך לעשות',`<textarea name="desc">${esc(j.desc)}</textarea>`)+
+  `<div class="two">${field('מחיר',inp('price',j.price||'','inputmode="decimal" placeholder="₪"'))}${o.id?'':field('שולם עכשיו',inp('paidNow','','inputmode="decimal" placeholder="₪"'))}</div>`+(o.id?'':`<span class="flabel">אמצעי תשלום</span>${pills('method',PAY_METHODS.map(m=>[m,m]),PAY_METHODS[0])}`)+
+  field('חומרים לעבודה (שורה לכל פריט)',`<textarea name="materials" placeholder="נכנסים לבד לרשימת הציוד של אותו יום">${esc(lines)}</textarea>`)+field('הערות',`<textarea name="notes">${esc(j.notes)}</textarea>`),`data-id="${o.id||''}" data-bump="${o.bump?1:''}"`)}
+function payForm(o){const js=o.jobId?[job(o.jobId)]:S.jobs.filter(j=>j.clientId===o.clientId&&debt(j)>0),cap=js.reduce((a,j)=>a+remaining(j),0);
+  return()=>`<div class="panel"><form data-form="pay" data-job="${o.jobId||''}" data-client="${o.clientId||''}" data-cap="${cap}" autocomplete="off"><div class="row between" style="margin-bottom:12px"><h2 style="font-size:18px">קבלת תשלום</h2><button type="button" class="iconbtn" style="margin:-10px" data-a="close" aria-label="סגירה">${ic('x')}</button></div>${field('סכום'+(cap?` (יתרה ${moneyT(cap)})`:''),inp('amount',cap||'','inputmode="decimal"'))}${pills('method',PAY_METHODS.map(m=>[m,m]),PAY_METHODS[0])}<input type="hidden" name="date" value="${today()}"><button class="btn ok full">אישור תשלום</button></form></div>`}
+function unitForm(cid,id){const u=id?(client(cid).units||[]).find(x=>x.id===id):{};return()=>formSheet('unit',id?'עריכת מזגן':'מזגן חדש',
+  field('מיקום',inp('room',u.room,'placeholder="סלון, חדר שינה…"'))+`<div class="two">${field('יצרן',inp('brand',u.brand))}${field('דגם',inp('model',u.model,'dir="ltr" style="text-align:right"'))}</div><div class="two">${field('כוח סוס',inp('hp',u.hp,'inputmode="decimal"'))}${field('סוג גז',`<select name="gas">${GAS.map(g=>`<option value="${g}" ${g===(u.gas||'')?'selected':''}>${g||'לא ידוע'}</option>`).join('')}</select>`)}</div>`+field('מספר סידורי',inp('serial',u.serial,'dir="ltr" style="text-align:right"'))+`<div class="two">${field('תאריך התקנה',inp('installDate',u.installDate,'type="date"'))}${field('אחריות עד',inp('warrantyUntil',u.warrantyUntil,'type="date"'))}</div>`+(id?`<button type="button" class="btn bad full" data-a="delUnit" data-client="${cid}" data-id="${id}">${ic('trash',18)}מחיקת מזגן</button>`:''),`data-client="${cid}" data-id="${id||''}"`)}
+function serviceForm(id){const c=client(id);return()=>`<div class="panel"><form data-form="service" data-id="${id}"><div class="row between" style="margin-bottom:12px"><h2 style="font-size:18px">שירות הבא</h2><button type="button" class="iconbtn" style="margin:-10px" data-a="close" aria-label="סגירה">${ic('x')}</button></div>${field('תאריך',inp('date',c.nextService||addMonths(today(),12),'type="date" id="svcDate"'))}<div class="btns" style="margin-bottom:13px">${[3,6,12].map(m=>`<button type="button" class="btn sm" data-a="svcQuick" data-m="${m}">בעוד ${m===12?'שנה':m+' חודשים'}</button>`).join('')}</div><div class="btns">${c.nextService?`<button type="button" class="btn bad" data-a="svcClear" data-id="${id}">ביטול מועד</button>`:''}<button class="btn pri">שמירה</button></div></form></div>`}
+
+/* ---------- materials drawer ---------- */
+function matRow(m){const c=m.jobId&&job(m.jobId)&&client(job(m.jobId).clientId);return`<div class="tick ${m.done?'done':''}"><button data-a="matToggle" data-id="${m.id}"><span class="check ${m.done?'on':''}">${m.done?ic('check',17,3):''}</span><span class="grow"><span class="txt wrap" style="display:block">${esc(m.text)}</span>${c||m.carried?`<span class="small muted">${esc([c&&c.name,m.carried&&'הועבר מיום קודם'].filter(Boolean).join(' · '))}</span>`:''}</span></button><button class="mini" data-a="matMove" data-id="${m.id}" aria-label="העברה ליום השני">${ic('swap',19)}</button><button class="mini" data-a="matDel" data-id="${m.id}" aria-label="מחיקה">${ic('trash',19)}</button></div>`}
+function matSheet(){const t=today(),nw=nextWork(),day=ui.matDay==='today'?t:nw,items=S.materials.filter(m=>m.date===day).sort((a,b)=>a.done-b.done),kd=S.kitDone[day]||{},open=items.filter(m=>!m.done),nwLabel=diffDays(nw,t)===1?'מחר':dayName(nw),jobs=scheduledOn(day);
+  return`<div class="panel">${bar('ציוד ליום עבודה','','x')}<div class="body"><div>
+  <div class="seg"><button class="${ui.matDay==='today'?'on':''}" data-a="matDay" data-v="today">היום · ${shortDate(t)}</button><button class="${ui.matDay==='next'?'on':''}" data-a="matDay" data-v="next">${nwLabel} · ${shortDate(nw)}</button></div>
+  ${jobs.length?`<p class="small muted" style="margin-bottom:9px">${jobs.length===1?'עבודה אחת':jobs.length+' עבודות'} ביומן: ${esc(jobs.map(j=>(client(j.clientId)||{}).name).filter(Boolean).join(', '))}</p>`:''}
+  <form class="addline" data-form="mat" autocomplete="off"><input name="text" placeholder="חומר או ציוד להביא…" aria-label="פריט חדש" enterkeyhint="done"><button class="btn pri" aria-label="הוספה">${ic('plus',22,2.4)}</button></form>
+  <div class="list">${items.map(matRow).join('')||`<div class="empty" style="padding:18px">אין חומרים לרשימה הזו</div>`}</div>
+  ${open.length?`<div class="btns" style="margin-top:10px">${ui.matDay==='today'?`<button class="btn sm" data-a="matRollAll">${ic('swap',16)}העבר ל${nwLabel==='מחר'?'מחר':nwLabel}</button>`:''}<a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent('רשימת חומרים ל'+relDay(day)+':\n'+open.map(m=>'• '+m.text).join('\n'))}">${ic('chat',16)}שליחה לספק</a></div>`:''}
+  <div class="sec"><div class="row between"><h2>ציוד קבוע</h2><button class="linkbtn" data-a="kitEdit">${ui.kitEdit?'סיום':'עריכה'}</button></div><p class="small muted" style="margin:-4px 0 8px">הסימונים מתאפסים לבד בכל יום.</p>
+  ${ui.kitEdit?`<form class="addline" data-form="kit" autocomplete="off"><input name="text" placeholder="פריט קבוע חדש" aria-label="פריט קבוע חדש"><button class="btn pri" aria-label="הוספה">${ic('plus',22,2.4)}</button></form>`:''}
+  <div class="list">${S.kit.map(k=>`<div class="tick ${kd[k.id]?'done':''}"><button data-a="kitToggle" data-id="${k.id}"><span class="check ${kd[k.id]?'on':''}">${kd[k.id]?ic('check',17,3):''}</span><span class="txt grow">${esc(k.text)}</span></button>${ui.kitEdit?`<button class="mini" data-a="kitDel" data-id="${k.id}" aria-label="מחיקה">${ic('trash',19)}</button>`:''}</div>`).join('')}</div></div></div></div></div>`}
+
+/* ---------- settings / backup ---------- */
+function settingsSheet(){const age=S.lastBackup?fullDate(S.lastBackup.slice(0,10)):'עוד לא בוצע';
+  return bar('הגדרות וגיבוי')+`<div class="body"><div><div class="card"><dl class="kv"><dt>לקוחות</dt><dd class="num">${S.clients.length}</dd><dt>עבודות</dt><dd class="num">${S.jobs.length}</dd><dt>תמונות</dt><dd class="num">${S.photos.length}</dd><dt>גיבוי אחרון</dt><dd>${age}</dd><dt>גרסה</dt><dd class="num">${APP_VERSION}</dd></dl></div>
+  <button class="item" style="margin-top:10px" data-a="soundToggle"><span class="grow bold">צלילי לחצנים</span><span class="tag ${S.sound===false?'t-gray':'t-green'}">${S.sound===false?'כבוי':'פועל'}</span></button>
+  <div class="sec"><div class="row"><h2>גיבוי</h2></div><p class="small muted" style="margin-bottom:10px">כל הנתונים שמורים רק בטלפון הזה. מחיקת האפליקציה מוחקת אותם, לכן כדאי לשמור קובץ גיבוי ב-iCloud או לשלוח אותו לעצמך.</p>
+  ${ui.backup?`<button class="btn ok full" data-a="backupShare">${ic('share',19)}שמירת קובץ הגיבוי</button>`:`<button class="btn pri full" data-a="backupMake">הכנת גיבוי</button>`}<button class="btn full" style="margin-top:8px" data-a="backupPick">שחזור מקובץ גיבוי</button></div></div></div>`}
+async function makeBackup(){toast('מכין גיבוי…');const recs=[];for(const p of S.photos){const r=await tx('photos','readonly',s=>s.get(p.id));if(r)recs.push({id:p.id,type:r.type,data:r.data})}
+  const head=new TextEncoder().encode(JSON.stringify({app:'israel-ac',v:1,at:new Date().toISOString(),state:S,photos:recs.map(r=>({id:r.id,type:r.type,size:r.data.byteLength}))})),magic='IAC1'+String(head.length).padStart(12,'0');
+  const name='גיבוי-ישראל-מיזוג-'+today()+'.bin';ui.backup=new File([magic,head,...recs.map(r=>r.data)],name,{type:'application/octet-stream'});refresh()}
+async function shareBackup(){const f=ui.backup;if(!f)return;let ok=false;
+  try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:'גיבוי '+BIZ});ok=true}}catch(e){if(e.name==='AbortError')return}
+  if(!ok){const a=document.createElement('a');a.href=URL.createObjectURL(f);a.download=f.name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),6e4)}
+  S.lastBackup=new Date().toISOString();ui.backup=null;toast('הגיבוי מוכן');commit()}
+async function restore(f){try{const magic=await f.slice(0,16).text();if(!/^IAC1\d{12}$/.test(magic))throw 0;const n=+magic.slice(4),h=JSON.parse(await f.slice(16,16+n).text());if(h.app!=='israel-ac'||!h.state)throw 0;
+    const total=h.photos.reduce((a,p)=>a+p.size,16+n);if(total!==f.size)throw 0;
+    if(!await ask(`לשחזר גיבוי מ-${fullDate(iso(new Date(h.at)))}? הנתונים הנוכחיים יוחלפו.`,'שחזור',true))return;
+    toast('משחזר…');await tx('photos','readwrite',s=>s.clear());urls.forEach(u=>URL.revokeObjectURL(u));urls.clear();let pos=16+n;
+    for(const p of h.photos){const data=await f.slice(pos,pos+p.size).arrayBuffer();pos+=p.size;await tx('photos','readwrite',s=>s.put({type:p.type,data},p.id))}
+    S=Object.assign(blank(),h.state);ui.backup=null;await writeNow();toast('השחזור הושלם');refresh()
+  }catch(e){console.warn(e);toast('הקובץ לא תקין')}}
+
+/* ---------- actions ---------- */
+const A={
+ enter(d,el){const s=$('#splash');if(s.classList.contains('go'))return;play('power');s.classList.add('go');setTimeout(()=>s.classList.add('out'),320);setTimeout(()=>s.remove(),980)},
+ soundToggle(){S.sound=S.sound===false;commit()},
+ answer:d=>window.__ans(d.v==='1'),close:()=>closeSheet(),hideInstall(){ui.installHidden=true;refresh()},
+ nav(d){while(sheets.length)closeSheet();ui.tab=d.tab;refresh();scrollTo(0,0)},filter(d){ui.filter=d.v;refresh()},settings(){ui.backup=null;openSheet(settingsSheet)},
+ openMat(){ui.matDay='next';openSheet(matSheet,{cls:'drawer'})},
+ newClient(){openSheet(clientForm(),{form:true});setTimeout(()=>{const i=$('#sheets [name=name]');if(i)i.focus()},60)},editClient:d=>openSheet(clientForm(d.id),{form:true}),
+ openClient(d){const top=sheets[sheets.length-1];if(top&&top.clientId===d.id)return;const s=openSheet(clientSheet(d.id));s.clientId=d.id},
+ async delClient(d){const c=client(d.id);if(!await ask(`למחוק את ${c.name} עם כל העבודות והתמונות?`,'מחיקה',true))return;const js=S.jobs.filter(j=>j.clientId===d.id).map(j=>j.id);await removePhotos(S.photos.filter(p=>p.clientId===d.id).map(p=>p.id));S.materials=S.materials.filter(m=>!js.includes(m.jobId));S.jobs=S.jobs.filter(j=>j.clientId!==d.id);S.clients=S.clients.filter(x=>x.id!==d.id);commit()},
+ newJob:d=>openSheet(jobForm({clientId:d.client}),{form:true}),editJob:d=>openSheet(jobForm({id:d.id}),{form:true}),openJob:d=>openSheet(jobSheet(d.id)),
+ jobDone(d){const j=job(d.id);j.status='done';if(j.date>today())j.date=today();syncJobMaterials(j,[]);toast(remaining(j)?'בוצע. נשאר חוב '+moneyT(remaining(j)):'העבודה סומנה כבוצעה');commit()},
+ async delJob(d){if(!await ask('למחוק את העבודה?','מחיקה',true))return;await removePhotos(S.photos.filter(p=>p.jobId===d.id).map(p=>p.id));S.materials=S.materials.filter(m=>m.jobId!==d.id);S.jobs=S.jobs.filter(j=>j.id!==d.id);commit()},
+ pay:d=>openSheet(payForm({jobId:d.id}),{cls:'dialog',form:true}),payClient:d=>openSheet(payForm({clientId:d.id}),{cls:'dialog',form:true}),
+ payFull(d){const j=job(d.id);applyPayment([j],remaining(j),PAY_METHODS[0],today());toast('התשלום נרשם');commit()},
+ async delPay(d){if(!await ask('למחוק את התשלום?','מחיקה',true))return;const j=job(d.job);j.payments=j.payments.filter(p=>p.id!==d.id);commit()},
+ addPhoto(d){ui.photoTarget={clientId:d.client,jobId:d.job||null};$('#filePhoto').click()},
+ viewPhoto:d=>openSheet(()=>S.photos.some(p=>p.id===d.id)?`<div class="bar" style="background:#000"><button class="iconbtn" data-a="close" aria-label="סגירה">${ic('x',24)}</button><h2></h2>${barBtn('delPhoto','trash','מחיקת תמונה',`data-id="${d.id}"`)}</div><img data-pid="${d.id}" alt="">`:null,{cls:'viewer'}),
+ async delPhoto(d){if(!await ask('למחוק את התמונה?','מחיקה',true))return;await removePhotos([d.id]);commit()},
+ editUnit:d=>openSheet(unitForm(d.client,d.id),{form:true}),
+ async delUnit(d){if(!await ask('למחוק את המזגן?','מחיקה',true))return;const c=client(d.client);c.units=c.units.filter(u=>u.id!==d.id);closeSheet();commit()},
+ editService:d=>openSheet(serviceForm(d.id),{cls:'dialog',form:true}),svcQuick(d){$('#svcDate').value=addMonths(today(),+d.m)},svcClear(d){delete client(d.id).nextService;closeSheet();commit()},
+ svcDone:d=>openSheet(jobForm({clientId:d.id,type:'ניקוי ושירות',status:'done',bump:true}),{form:true}),
+ matDay(d){ui.matDay=d.v;refresh()},matToggle(d){const m=S.materials.find(x=>x.id===d.id);m.done=!m.done;commit()},matDel(d){S.materials=S.materials.filter(x=>x.id!==d.id);commit()},
+ matMove(d){const m=S.materials.find(x=>x.id===d.id),n=nextWork();m.date=m.date===n?today():n;m.carried=false;toast('הועבר ל'+relDay(m.date));commit()},
+ matRollAll(){const n=nextWork();S.materials.forEach(m=>{if(m.date===today()&&!m.done)m.date=n});ui.matDay='next';commit()},
+ kitToggle(d){const day=ui.matDay==='today'?today():nextWork(),o=S.kitDone[day]=S.kitDone[day]||{};if(o[d.id])delete o[d.id];else o[d.id]=1;commit()},kitEdit(){ui.kitEdit=!ui.kitEdit;refresh()},kitDel(d){S.kit=S.kit.filter(k=>k.id!==d.id);commit()},
+ noteToggle(d){const n=S.notes.find(x=>x.id===d.id);n.done=n.done?0:1;commit()},notePin(d){const n=S.notes.find(x=>x.id===d.id);n.pin=n.pin?0:1;commit()},async noteDel(d){if(!await ask('למחוק את הפתק?','מחיקה',true))return;S.notes=S.notes.filter(x=>x.id!==d.id);commit()},
+ backupMake:()=>makeBackup().catch(()=>toast('הגיבוי נכשל')),backupShare:()=>shareBackup(),backupPick(){$('#fileBackup').click()}
+};
+const F={
+ client(v,d){const name=v.name.trim();if(!name)return toast('צריך שם לקוח');const data={name,phone:v.phone.trim(),address:v.address.trim(),notes:v.notes.trim()};let id=d.id;
+  if(id)Object.assign(client(id),data);else{id=uid();S.clients.push(Object.assign({id,units:[],at:Date.now()},data))}closeSheet();if(!d.id){const s=openSheet(clientSheet(id));s.clientId=id}commit()},
+ job(v,d){let cid=v.clientId;if(!cid){const name=(v.clientName||'').trim();if(!name)return toast('צריך לבחור לקוח');let c=S.clients.find(x=>x.name.trim()===name);if(!c){c={id:uid(),name,phone:'',address:'',notes:'',units:[],at:Date.now()};S.clients.push(c)}cid=c.id}
+  if(!v.date)return toast('צריך תאריך');const data={clientId:cid,type:v.type,status:v.status,date:v.date,time:v.time,desc:v.desc.trim(),price:num(v.price),notes:v.notes.trim()};let j=d.id&&job(d.id);
+  if(j)Object.assign(j,data);else{j=Object.assign({id:uid(),payments:[]},data);S.jobs.push(j);const p=num(v.paidNow);if(p>0)j.payments.push({id:uid(),amount:p,method:v.method,date:today()})}
+  syncJobMaterials(j,v.materials.split('\n'));if(d.bump)client(cid).nextService=addMonths(today(),12);closeSheet();commit();toast('העבודה נשמרה')},
+ pay(v,d){const a=num(v.amount),cap=+d.cap;if(a<=0)return toast('צריך סכום');if(cap&&a>cap+.001)return toast('הסכום גדול מהיתרה');const js=d.job?[job(d.job)]:S.jobs.filter(j=>j.clientId===d.client&&debt(j)>0);applyPayment(js,a,v.method,v.date);closeSheet();commit();toast('התשלום נרשם')},
+ unit(v,d){const c=client(d.client);c.units=c.units||[];const data={room:v.room.trim(),brand:v.brand.trim(),model:v.model.trim(),hp:v.hp.trim(),gas:v.gas,serial:v.serial.trim(),installDate:v.installDate,warrantyUntil:v.warrantyUntil};if(d.id)Object.assign(c.units.find(u=>u.id===d.id),data);else c.units.push(Object.assign({id:uid()},data));closeSheet();commit()},
+ service(v,d){if(v.date)client(d.id).nextService=v.date;closeSheet();commit()},
+ note(v){const t=v.text.trim();if(!t)return;S.notes.push({id:uid(),text:t,pin:0,done:0,at:Date.now()});commit()},
+ mat(v){const t=v.text.trim();if(!t)return;S.materials.push({id:uid(),text:t,date:ui.matDay==='today'?today():nextWork(),done:false});commit();const i=$('#sheets [data-form=mat] input');if(i)i.focus()},
+ kit(v){const t=v.text.trim();if(!t)return;S.kit.push({id:uid(),text:t});commit();const i=$('#sheets [data-form=kit] input');if(i)i.focus()}
+};
+document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(el){e.preventDefault();A[el.dataset.a](el.dataset,el);return}
+  const s=e.target.classList&&(e.target.classList.contains('drawer')||e.target.classList.contains('dialog'));if(s)closeSheet()});
+document.addEventListener('submit',e=>{const f=e.target.closest('[data-form]');if(!f)return;e.preventDefault();F[f.dataset.form](Object.fromEntries(new FormData(f)),f.dataset)});
+document.addEventListener('input',e=>{if(e.target.id==='q'){ui.q=e.target.value;$('#clist').innerHTML=clientRows()}});
+$('#filePhoto').addEventListener('change',e=>{const f=[...e.target.files];e.target.value='';if(f.length)addPhotos(f)});
+$('#fileBackup').addEventListener('change',e=>{const f=e.target.files[0];e.target.value='';if(f)restore(f)});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)flush();else refresh()});
+addEventListener('pagehide',flush);
+
+(async()=>{S=await load();renderApp();
+  if(navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(()=>{});
+  if('serviceWorker'in navigator&&location.protocol==='https:'||location.hostname==='localhost'&&'serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+})();
+</script>
+</body>
+</html>
