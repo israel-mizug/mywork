@@ -1,5 +1,5 @@
 // Offline support. Caches only the app files, never customer data.
-const CACHE = 'israel-ac-v1.0.0';
+const CACHE = 'israel-ac-v1.0.1';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './logo.png', './icon-180.png', './icon-192.png', './icon-512.png', './icon-maskable.png'];
 
 self.addEventListener('install', e => {

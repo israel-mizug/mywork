@@ -53,6 +53,7 @@ main{padding:12px 14px calc(var(--bot) + 92px) 40px;max-width:760px;margin:0 aut
 .handle span{writing-mode:vertical-rl;font-size:13px;font-weight:700;letter-spacing:.2px}
 .handle b{min-width:20px;height:20px;border-radius:10px;background:#fff;color:var(--orange);font-size:12px;display:grid;place-items:center}
 .fab{position:fixed;right:max(16px,calc(50vw - 364px));bottom:calc(var(--bot) + 72px);z-index:16;height:52px;padding:0 18px 0 20px;border-radius:26px;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;gap:6px;box-shadow:0 5px 16px rgba(20,118,198,.4)}
+.fab.orange{background:var(--orange);box-shadow:0 5px 16px rgba(232,100,27,.4)}
 
 /* blocks */
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:13px}
@@ -172,7 +173,7 @@ label.f>span,.flabel{display:block;font-size:14px;font-weight:650;margin-bottom:
 <input id="fileBackup" type="file" hidden>
 <script>
 'use strict';
-const APP_VERSION='1.0.0', BIZ='ישראל מיזוג אוויר';
+const APP_VERSION='1.0.1', BIZ='ישראל מיזוג אוויר';
 const JOB_TYPES=['התקנה','תיקון','ניקוי ושירות','מילוי גז','החלפת חלק','פירוק','בדיקה','אחר'];
 const PAY_METHODS=['מזומן','ביט / פייבוקס','העברה בנקאית','צ׳ק','אשראי'];
 const GAS=['','R32','R410A','R22','R407C','R134a','אחר'];
@@ -331,7 +332,7 @@ function vClients(){
   const backup=S.clients.length>=3&&(age===null||age>=14)?`<button class="banner" data-a="settings" style="width:100%"><span class="grow"><b>כדאי לגבות.</b> הנתונים שמורים רק בטלפון הזה. ${age===null?'עוד לא נעשה גיבוי.':`הגיבוי האחרון לפני ${age} ימים.`}</span></button>`:'';
   const nw=nextWork();
   return`${install}${backup}<div class="tiles"><button class="tile" data-a="nav" data-tab="cal"><b class="num">${scheduledOn(today()).length}</b><span>עבודות היום</span></button><button class="tile" data-a="nav" data-tab="cal"><b class="num">${scheduledOn(nw).length}</b><span>${diffDays(nw,today())===1?'עבודות מחר':'ב'+dayName(nw)}</span></button><button class="tile" data-a="nav" data-tab="debts"><b style="color:${totalDebt()?'var(--red)':'inherit'}">${money(totalDebt())}</b><span>חובות פתוחים</span></button></div>
-  <div class="chips">${[['all','כל הלקוחות'],['debt','עם חוב'],['clear','בלי חוב']].map(f=>`<button class="chip ${ui.filter===f[0]?'on':''}" data-a="filter" data-v="${f[0]}">${f[1]}</button>`).join('')}</div><div class="list" id="clist">${clientRows()}</div><button class="fab" data-a="newClient">${ic('plus',20,2.4)}לקוח חדש</button>`}
+  <div class="chips">${[['all','כל הלקוחות'],['debt','עם חוב'],['clear','בלי חוב']].map(f=>`<button class="chip ${ui.filter===f[0]?'on':''}" data-a="filter" data-v="${f[0]}">${f[1]}</button>`).join('')}</div><div class="list" id="clist">${clientRows()}</div><button class="fab orange" data-a="newClient">${ic('plus',20,2.4)}לקוח חדש</button>`}
 function vCal(){const t=today(),sch=S.jobs.filter(j=>j.status!=='done').sort((a,b)=>(a.date+(a.time||'99')).localeCompare(b.date+(b.time||'99')));
   const groups=[['באיחור',sch.filter(j=>j.date<t)],['היום · '+shortDate(t),sch.filter(j=>j.date===t)],['מחר · '+shortDate(addDays(t,1)),sch.filter(j=>j.date===addDays(t,1))],['בהמשך',sch.filter(j=>j.date>addDays(t,1))]];
   const done=S.jobs.filter(j=>j.status==='done').sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
